@@ -1,0 +1,10 @@
+<% if @player %>
+	<p>Are you sure you want to delete the following player: <em>"<%=h @player.content %>"</em>?</p>
+	<form action="/<%= @player.id %>" method="post">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="Yes, Delete It!">
+		<a href="/<%= @player.id %>">Cancel</a>
+	</form>
+<% else %>
+	<p>Player not found.</p>
+<% end %>

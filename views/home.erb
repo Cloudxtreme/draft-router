@@ -1,0 +1,21 @@
+<section id="add">
+	<form action="/" method="post">
+		<textarea name="content" placeholder="Your player group&hellip;"></textarea>
+		<input type="submit" value="Switch Group!">
+	</form>
+</section>
+
+<% if false %>
+<% @players.each do |player| %>
+	<article <%= 'class="complete"' if player.complete %>>
+		<p>
+			<%=h player.content %>
+			<span><a href="/<%= player.id %>">[edit]</a></span>
+		</p>
+		<p class="links">
+			<a href="/<%= player.id %>/complete">&#8623;</a>
+		</p>
+		<p class="meta">Created: <%= player.created_at %></p>
+	</article>
+<% end %>
+<% end %>

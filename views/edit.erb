@@ -1,0 +1,11 @@
+<% if @player %>
+	<form action="/<%= @player.id %>" method="post" id="edit">
+		<input type="hidden" name="_method" value="put">
+		<textarea name="content"><%=h @player.content %></textarea>
+		<input type="checkbox" name="complete" <%= "checked" if @player.complete %>>
+		<input type="submit">
+	</form>
+	<p><a href="/<%= @player.id %>/delete">Delete</a></p>
+<% else %>
+	<p>Player not found.</p>
+<% end %>
